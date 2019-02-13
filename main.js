@@ -44,6 +44,16 @@ const main = () => {
 
     const game = new Game(canvasElement);
     game.startLoop();
+
+    const setPlayerDirection = () => {
+      if(event.code === 'ArrowUp'){
+        game.player.setDirection(-1);
+      } else if(event.code ==='ArrowDown'){
+        game.player.setDirection(1);
+      }
+    };
+
+    document.addEventListener('keydown', setPlayerDirection);
   };
 
 
